@@ -6,7 +6,7 @@ export const DB_URI = "mongodb://localhost:27017/HC_DB";
 export const BASIC_AUTH_NAME = "vegasnerva";
 export const BASIC_AUTH_PASS = "@l#i$f%e";
 //----------------------[PORT]--------------------------
-export const PORT = 1000;
+export const PORT = 3100;
 export const HOST = "127.0.0.1";
 
 //------------- Keep all small case Don't change any thing -----------------
