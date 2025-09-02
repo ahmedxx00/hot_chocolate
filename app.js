@@ -58,7 +58,7 @@ app.use(express.static(path.join(__dirname, "products_images")));
 app.use(express.static(path.join(__dirname, "category_covers")));
 //---------------- set view engine ------------------
 app.set("view engine", "ejs");
-app.set("views", "views"); // default folder name is 'views'
+app.set("views", path.join(__dirname, "views")); // default folder name is 'views'
 //---------------------------------------------------
 
 /*########################[ Routes ]############################*/
