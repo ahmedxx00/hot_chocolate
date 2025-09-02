@@ -1,0 +1,153 @@
+/* ------ IMPORTANT [ main_wrapper &&  asnaf_wrap && product card ] styles ----------- */
+/*----- exists in the unique file of product_card_styles.css --- */
+
+.main_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.head {
+  width: 100%;
+  background-color: var(--coffee);
+  color: var(--coffee-light);
+  padding: 5px;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.btn_add_product {
+  font-size: 15px;
+  cursor: pointer;
+  padding: 1px 3px;
+  border-radius: 4px;
+  background-color: var(--light);
+  color: black;
+  font-weight: normal;
+}
+
+.products_wrap {
+  display: flex;
+  padding: 4px;
+  flex-wrap: wrap;
+  margin: 0 0 50px;
+  gap: 16px;
+  justify-content: space-evenly;
+}
+
+/* ------ IMPORTANT [ main_wrapper &&  asnaf_wrap && product card ] styles ----------- */
+/*----- exists in the unique file of product_card_styles.css --- */
+
+/* ------------------ .new_product_modal --------------------- */
+
+.new_product_modal .choose_img {
+  font-weight: bold;
+  text-align: center;
+}
+.new_product_modal .price{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    direction: rtl;
+}
+
+.new_product_modal .price input {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.new_product_modal input[name="product_name"] {
+  text-align: start;
+}
+/* ---- confirm remove product modal dialog elements are dynamically created in superadmin_edit_cat.js file --------- */
+.cnf_rem_product_h {
+  text-wrap: wrap;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-family: q_bold;
+}
+.rem_product_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+}
+.cnf_rem_product_btn,
+.cancel_rem_product_btn {
+  font-family: q_bold;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin: 0 15px;
+}
+.cnf_rem_product_btn {
+  background-color: maroon;
+}
+.cancel_rem_product_btn {
+  background-color: black;
+}
+
+/* ------------------------------ */
+/* --------- media queries ------------ */
+/* -------- here for small mobiles - we show only one cat card ------- */
+@media (max-width: 365px) {
+  .cat_card {
+    min-width: 320px;
+  }
+  .cat_card .img_wrap {
+    height: 180px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .cat_card {
+    min-width: 280px;
+  }
+  .cat_card .img_wrap {
+    height: 160px;
+    width: 100%;
+  }
+}
+/* -------- here for small mobiles - we show only one cat card also ------- */
+
+@media (max-width: 322px) {
+  .cat_card {
+    min-width: 250px;
+  }
+  .cat_card .img_wrap {
+    height: 140px;
+    width: 100%;
+  }
+}
+/* ------------------ */
+
+/* ------------------ last --------------------- */
+.simplebar-scrollbar::before {
+  background-color: red;
+}
+
+.swal2-popup {
+  font-size: 10px !important;
+  font-weight: normal;
+}

@@ -1,0 +1,14 @@
+node_modules
+
+#-------------------------------------
+
+# تجاهل كل الملفات داخل products_images/
+# products_images/*
+# # ما تتجاهلش ملف .gitkeep
+# !products_images/.gitkeep
+
+# # تجاهل كل الملفات داخل category_covers/
+# category_covers/*
+# # ما تتجاهلش ملف .gitkeep
+# !category_covers/.gitkeep
+

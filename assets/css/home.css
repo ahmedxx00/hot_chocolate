@@ -1,0 +1,173 @@
+/* -------- cats_wrapper ------- */
+
+.site_logo {
+  width: 140px;
+  height: auto;
+}
+.cats_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 8px;
+  padding: 5px;
+  margin-top: 30px;
+  /* margin: 50px 0 30px; */
+}
+
+/* there are media query for it below  */
+.cat_card {
+  position: relative;
+
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  min-width: 400px; /* -- general -----*/
+}
+
+.cat_card > span {
+  color: var(--dark);
+  font-size: 25px;
+  font-family: "Cairo";
+}
+.cat_card .img_wrap {
+  height: 300px; /*-- general ---*/
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 0 8px var(--dark); */
+  box-shadow: 0 0 8px var(--coffee);
+  background-color: white;
+  border-radius: 6px;
+  padding: 6px;
+  text-decoration: none; /* important */
+}
+
+.img_wrap:any-link {
+  text-decoration: none;
+}
+.cat_card img {
+  /* height: 180px;
+  width: auto; */
+  pointer-events: all;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+/* ------------ isLoggedIn edit icons --------- */
+
+.edit_cat_img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: auto;
+  background-color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* -------- here for small mobiles - we show only one cat card ------- */
+@media (max-width: 991px) {
+  .cat_card {
+    min-width: 280px;
+  }
+  .cat_card .img_wrap {
+    height: 250px; /*-- general ---*/
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cat_card {
+    min-width: 240px;
+  }
+  .cat_card .img_wrap {
+    height: 180px; /*-- general ---*/
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 680px) {
+  .cat_card {
+    min-width: 220px;
+  }
+  .cat_card .img_wrap {
+    height: 180px; /*-- general ---*/
+    max-width: 220px;
+  }
+  .site_logo {
+    width: 100px;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .cat_card {
+    min-width: 400px;
+  }
+  .cat_card .img_wrap {
+    height: 300px; /*-- general ---*/
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .cat_card {
+    min-width: 320px;
+  }
+  .cat_card .img_wrap {
+    height: 250px; /*-- general ---*/
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cat_card {
+    min-width: 270px;
+  }
+  .cat_card .img_wrap {
+    height: 220px; /*-- general ---*/
+    max-width: 270px;
+  }
+}
+/*
+@media (max-width: 350px) {
+  .cat_card {
+    min-width: 280px;
+  }
+  .cat_card .img_wrap {
+    height: 160px;
+    width: 100%;
+  }
+  .cat_card > span {
+    font-size: 14px;
+  }
+}
+/* -------- here for small mobiles - we show only one cat card also ------- */
+
+/* @media (max-width: 322px) {
+  .cat_card {
+    min-width: 250px;
+  }
+  .cat_card .img_wrap {
+    height: 140px;
+    width: 100%;
+  }
+  .cat_card > span {
+    font-size: 13px;
+  }
+}  */
+
+/* ------------------------------ */

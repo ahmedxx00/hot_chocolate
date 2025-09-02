@@ -1,0 +1,21 @@
+  <%_ if (locals.is_super_admin && locals.is_super_admin == true) { _%>
+  <div class="product admin">
+    <%_ } else { _%>
+    <div class="product user">
+      <%_ } _%>
+      <%_ if (locals.is_super_admin && locals.is_super_admin == true) { _%>
+      <input type="hidden" name="id" value="<%= product['_id'] _%>">
+      <%_ } _%>
+      <span class="price"><span class="prc"><%= product['price'] _%></span><span class="crn">KWD</span></span>
+      <div class="img_wrap">
+        <%_ if (product['img_name'] != null) { _%>
+        <img class="displayed_img" src="/<%= product['img_name'] _%>" alt="صورة المنتج">
+        <%_ } else { _%>
+        <img class="displayed_img" src="/site_logo.png" alt="صورة المنتج">
+        <%_ } _%>
+      </div>
+        <span class="product_name"><%= product['product_name'] _%></span>
+      <%_ if (locals.is_super_admin && locals.is_super_admin == true) { _%>
+        <button class="btn_rem_product">حذف</button>
+      <%_ }_%>
+    </div>

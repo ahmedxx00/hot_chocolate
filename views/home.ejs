@@ -1,0 +1,198 @@
+<%- include("./parts/navbar.ejs" , {title : 'الرئيسية',isLoggedIn : locals.isLoggedIn ? isLoggedIn : false ,stylesheets:['/css/home.css']}) _%>
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0 nav-bar">
+  <nav class="navbar navbar-expand-lg bg-none navbar-dark px-3 pt-3">
+    <a href="" class="navbar-brand px-lg-4 m-0">
+      <img src="some_logo.png" alt="" class="site_logo">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+      <!-- <div class="navbar-nav ml-auto p-2">
+        <a href="/" class="nav-item nav-link active" style="text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 3px; text-decoration-style: dashed;">Home</a>
+      </div> -->
+      <div class="navbar-nav ml-auto p-2">
+        <% if (locals.isLoggedIn && locals.isLoggedIn == true) { %>
+        <button class="logout" style="padding-top: 0.25rem; padding-bottom: 0.25rem; padding-inline-start: 1rem; padding-inline-end: 1rem; width: max-content; background-color: black; color: white; border-radius: 7px; border: none; outline: none; margin: 0 auto; font-size: 18px;">Logout</button>
+        <% } else { %>
+        <a href="/auth" style="padding-top: 0.25rem; padding-bottom: 0.25rem; padding-inline-start: 1rem; padding-inline-end: 1rem; width: max-content; background-color: goldenrod; color: black; border-radius: 7px; border: none; outline: none; margin: 0 auto; font-size: 18px;">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-3">
+  <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
+    <div class="carousel-inner" style="max-height: 400px;">
+      <div class="carousel-item active" style="max-height: 400px;">
+        <img class="w-100" src="/carousel-1.jpg" alt="Image" style="max-height: 400px;">
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+          <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
+          <h1 class="display-2 text-white m-0">COFFEE</h1>
+          <h2 class="text-white m-0">* SINCE 2018 *</h2>
+        </div>
+      </div>
+      <div class="carousel-item" style="max-height: 400px;">
+        <img class="w-100" src="/carousel-2.jpg" alt="Image" style="max-height: 400px;">
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+          <h2 class="text-primary font-weight-medium m-0">We Have Been Serving</h2>
+          <h1 class="display-2 text-white m-0">COFFEE</h1>
+          <h2 class="text-white m-0">* SINCE 2018 *</h2>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev" style="max-height: 400px;">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#blog-carousel" data-slide="next" style="max-height: 400px;">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Products Start -->
+<div class="container py-3 m-0 mx-auto w-100">
+  <div class="container px-0 mx-auto">
+    <div class="section-title">
+      <h1 class="text-primary text-uppercase font-weight-bold" style="letter-spacing: 3px;">Products</h1>
+    </div>
+    <%_ if (locals.cats_covers_obj) { _%>
+    <div class="cats_wrapper">
+      <%_ Object.entries(cats_covers_obj).forEach(([cat_name, img]) => { _%>
+      <div class="cat_card">
+        <% if (locals.isLoggedIn && locals.isLoggedIn == true) { %>
+        <img src="/edit.png" alt="Image" class="edit_cat_img">
+        <% } %>
+        <a class="img_wrap" href="/cats/<%= cat_name %>">
+          <%_ if (img) { _%>
+          <img src="/<%= img %>" alt="<%= cat_name %>" class="cat_cover" />
+          <%_ } else { _%>
+          <img src="/site_logo.png" alt="<%= cat_name %>" class="cat_cover" />
+          <%_ } _%>
+        </a>
+        <span class="cat"><%= cat_name %></span>
+      </div>
+      <%_ }) _%>
+    </div>
+    <%_ } _%>
+  </div>
+</div>
+<!-- Products End -->
+
+<% if (locals.isLoggedIn && locals.isLoggedIn == true) { %>
+<!-- BEGIN edit_cat_cover modal -->
+<div id="edit_cat_cover_modal" class="jq_modal" style="display: none">
+  <h4>تعديل صورة الغلاف</h4>
+  <input type="hidden" name="cat_name" />
+  <input type="file" id="cat_cover_image_picker">
+  <button id="cnf_edit_cat_cover_btn">تعديل الصورة</button>
+</div>
+<!-- END edit_cat_cover modal -->
+<% } %>
+
+
+<!-- Service Start -->
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div class="section-title">
+      <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">H/C Catering</h4>
+      <h1 class="display-4">Best Luxury Catering</h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mb-5">
+        <div class="row align-items-center">
+          <div class="col-lg-10 col-md-12 col-sm-12 border-0 mx-auto">
+            <img class="img-fluid mb-3 mb-sm-0" src="/catering_menu.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Service End -->
+
+<!-- Service Start -->
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div class="section-title">
+      <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Vision</h4>
+      <h1 class="display-4">Fresh & Organic Beans</h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="row align-items-center">
+          <div class="col-sm-5">
+            <img class="img-fluid mb-3 mb-sm-0" src="/service-1.jpg" alt="">
+          </div>
+          <div class="col-sm-7">
+            <h4><i class="fa fa-coffee service-icon"></i>Fresh Coffee Beans</h4>
+            <p class="m-0" style="font-size: 1.5rem;">Our goal is to provide freshly roasted coffee from the finest Brazilian coffee varieties.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-5">
+        <div class="row align-items-center">
+          <div class="col-sm-5">
+            <img class="img-fluid mb-3 mb-sm-0" src="/service-3.jpg" alt="">
+          </div>
+          <div class="col-sm-7">
+            <h4><i class="fa fa-award service-icon"></i>Best Quality Coffee</h4>
+            <p class="m-0" style="font-size: 1.5rem;">We in ( Hot Chocolate Cafe ) are keen on serving you the best coffee you will ever taste allover Kuwait & The middle East.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Service End -->
+
+<!-- Footer Start -->
+<div class="container-fluid footer text-white px-0 position-relative overlay-top">
+  <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+    <div class="col-lg-4 col-md-6 mb-5">
+      <h4 class="text-primary text-uppercase mb-4" style="letter-spacing: 3px;">Get In Touch</h4>
+      <p><i class="fa fa-map-marker-alt mr-2"></i>الكويت , شارع السور , برج التجارية</p>
+      <p><i class="fa fa-phone-alt mr-2"></i>( +965 ) 97967077</p>
+      <p class="m-0"><i class="fa fa-envelope mr-2"></i>info@hc-kw.com</p>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-5">
+      <h4 class="text-primary text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+      <p>Follow us on social media platforms</p>
+      <div class="d-flex justify-content-start">
+        <a target="_blank" class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.google.com/maps/place/29%C2%B022'13.2%22N+47%C2%B059'33.4%22E/@29.370325,47.992603,17z/data=!3m1!4b1!4m4!3m3!8m2!3d29.370325!4d47.992603?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-map-marker-alt"></i></a>
+        <a target="_blank" class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://api.whatsapp.com/send/?phone=96597967077"><i class="fab fa-whatsapp"></i></a>
+        <a target="_blank" class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.instagram.com/H.c_kw/"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.snapchat.com/@h.ckw?share_id=y3QpNR-WGuM&locale=ar-AE"><i class="fab fa-snapchat"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-5">
+      <h4 class="text-primary text-uppercase mb-4" style="letter-spacing: 3px;">Open Hours</h4>
+      <div>
+        <h6 class="text-white-50 text-uppercase">Sunday - Thursday</h6>
+        <p>8.00 AM - 10.00 PM</p>
+        <h6 class="text-white-50 text-uppercase">Friday</h6>
+        <p>2.00 PM - 10.00 PM</p>
+        <h6 class="text-white-50 text-uppercase">Saturday</h6>
+        <p>1.00 PM - 10.00 PM</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center text-white border-top py-3 px-sm-2 px-md-3" style="border-color: rgba(256, 256, 256, .1) !important; font-size: 15px;">
+    <p class="mb-2 text-white" style="font-size: 12px">Copyright &copy; <a class="font-weight-bold" href="/">hc-kw.com</a>. All Rights Reserved.</a></p>
+    <p class="m-0 text-white-50" style="font-size: 12px">Designed by <a target="_blank" class="font-weight-bold" href="https://api.whatsapp.com/send/?phone=201153323912">Programming Jeeks</a></p>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<%- include("./parts/footer.ejs" , {moduleScripts: ['/js/home.js'] }) _%>

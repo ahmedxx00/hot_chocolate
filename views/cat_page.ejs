@@ -1,0 +1,68 @@
+<%- include("./parts/navbar.ejs" , {title :`${title}`,isLoggedIn : locals.isLoggedIn ? isLoggedIn : false,stylesheets:['/css/cat_page.css' , '/css/product_card_styles.css']}) _%>
+
+<div class="main_wrapper">
+
+  <div class="head">
+    <span class="cat_name"><%= cat_name _%></span>
+    <%_ if (locals.isLoggedIn && locals.is_super_admin == true) { _%>
+    <span class="btn_add_product">اضافة منتج</span>
+    <%_ } _%>
+  </div>
+
+  <!-- BEGIN products_wrap -->
+  <div class="products_wrap">
+    <%_ products_array.forEach(product => { _%>
+    <%- include("./parts/product_template_with_img.ejs" ,{product : product , is_super_admin : locals.is_super_admin}) _%>
+    <%_ }) _%>
+  </div>
+  <!-- END products_wrap -->
+  
+  <!-- BEGIN add_product modal -->
+  <div class="new_product_modal jq_modal" style="display: none">
+    <h4>اضافة منتج <span class="cat_name"></span></h4>
+    <input type="text" name="product_name" placeholder="اسم المنتج" spellcheck="false" />
+    <div class="choose_img">
+      <span>اختر صورة</span>
+      <input type="file" id="new_product_image_picker" spellcheck="false">
+    </div>
+    <div class="price">
+      <span>السعر</span>
+      <input type="number" name="price" min="0" step="0.25" spellcheck="false">
+    </div>
+    <button id="cnf_new_product_btn">اضافة منتج</button>
+  </div>
+  <!-- END add_product modal -->
+
+  <!-- BEGIN edit_product_img modal -->
+  <div id="edit_product_img_modal" class="jq_modal" style="display: none">
+    <input type="hidden" name="cat_name" />
+    <input type="hidden" name="product_id" />
+    <h4 class="product_name"></h4>
+    <input type="file" id="product_image_picker" placeholder="اختر الصورة" spellcheck="false">
+    <button id="cnf_edit_product_img_btn">تعديل الصورة</button>
+  </div>
+  <!-- END edit_product_img modal -->
+
+  <!-- BEGIN edit_product_name modal -->
+  <div id="edit_product_name_modal" class="jq_modal" style="display: none">
+    <input type="hidden" name="cat_name" />
+    <input type="hidden" name="product_id" />
+    <h4 class="product_name"></h4>
+    <input type="text" name="new_product_name" placeholder="الاسم الجديد" spellcheck="false" />
+    <button id="cnf_edit_product_name_btn">تعديل الاسم</button>
+  </div>
+  <!-- END edit_product_name modal -->
+
+  <!-- BEGIN edit_product_prc modal -->
+  <div id="edit_product_price_modal" class="jq_modal" style="display: none">
+    <input type="hidden" name="cat_name" />
+    <input type="hidden" name="product_id" />
+    <h4 class="product_name"></h4>
+    <input type="text" name="new_price" placeholder="السعر الجديد" spellcheck="false" />
+    <button id="cnf_edit_product_price_btn">تحديث السعر</button>
+  </div>
+  <!-- END edit_product_prc modal -->
+
+</div>
+
+<%- include("./parts/footer.ejs",{ moduleScripts:['/js/cat_page.js'] } ) _%>

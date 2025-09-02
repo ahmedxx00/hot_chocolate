@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width , user-scalable=no" />
+  <meta name="description" content="هوت شوكليت أرقى كوفى شوب الكويت , للقهوة مذاق لا يقاوم">
+  <title><%= title _%></title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/site_logo.png" type="image/x-icon">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/jquery.modal.min.css" />
+  <link rel="stylesheet" href="/css/simplebar.css" />
+  <link rel="stylesheet" href="/css/spinner.css" />
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/style.min.css" rel="stylesheet">
+
+
+  <%_ if (locals.stylesheets) { _%>
+  <%_ stylesheets.forEach((stylesheet)=>{ _%>
+  <link rel="stylesheet" href="<%= stylesheet _%>" />
+  <%_ }) _%>
+  <%_ } _%>
+
+  <script src="/js/jquery-3.7.1.min.js"></script>
+  <script src="/js/jquery.modal.min.js"></script>
+
+
+  <%_ if (locals.scripts) { _%>
+  <%_ scripts.forEach((script)=>{ _%>
+  <script src="<%= script _%>"></script>
+  <%_ }) _%>
+  <%_ } _%>
+
+  <script>
+    if (!window.location.href.includes('localhost')) {
+      document.addEventListener('contextmenu', event => event.preventDefault());
+      document.onkeydown = function(e) {
+        if (
+          (e.ctrlKey && (e.key === "u" || e.key === "U")) ||
+          e.keyCode == 123 ||
+          e.which == 123 ||
+          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i"))
+        ) {
+          e.preventDefault();
+        }
+      }
+    }
+  </script>
+  <noscript>
+    <style>
+      body {
+        display: none;
+      }
+    </style>
+    <div style="text-align:center; margin-top:100px; font-size:20px; color:black;">
+      هذا الموقع يتطلب تشغيل JavaScript للعمل بشكل صحيح. رجاءً قم بتمكين JavaScript في المتصفح.
+    </div>
+    <style>
+      /* Reinstate scrolling for non-JS clients */
+      .simplebar-content-wrapper {
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+      }
+
+      .simplebar-content-wrapper::-webkit-scrollbar,
+      .simplebar-hide-scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: initial;
+        height: initial;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>

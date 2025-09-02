@@ -1,0 +1,270 @@
+
+
+/* ------------- fonts ---------------- */
+
+@font-face {
+  font-display: swap;
+  font-family: q_light;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/quattrocento-v23-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: q_bold;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/quattrocento-v23-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/cairo-regular.cae88dc.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "botros";
+  src: url("../fonts/botros.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.e5916eb.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.3f17d4f.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ----------- arabic ------------- */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* -------------- :root --------------- */
+:root {
+  --BLACK: #000000;
+  --WHITE: #ffffff;
+  --MAIN-BLACK: #2c2c2c;
+  --MAIN-WHITE: #eaeaea;
+  --MAIN-MASTARD: #febe00;
+  --OFF-MASTARD: #b48700;
+  --OVERLAY: #00000056;
+  --GRAY: gray;
+  --GOLD: #ad8838;
+  --Scroll-thumb: var(--GOLD);
+  --Scroll-track: #2c2c2cea;
+  
+  --coffee: #33211d;
+  --coffee-light: #da9f5b;
+  --light : #fffbf2;
+}
+/* ------------------------------------ */
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo" !important;
+}
+
+/* ------- logout --------- */
+
+/* .logout {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 0 0 5px black;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.logout img {
+  width: 22px;
+  height: auto;
+} */
+
+.logout:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+/* ---- logout modal dialog elements are dynamically created in navbar.js file --------- */
+.cnf_logout_h {
+  text-wrap: wrap;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-family: q_bold;
+}
+.lgt_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+}
+.cnf_logout_btn,
+.cancel_logout_btn {
+  font-family: q_bold;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin: 0 15px;
+}
+.cnf_logout_btn {
+  background-color: maroon;
+}
+.cancel_logout_btn {
+  background-color: black;
+}
+
+/* //------------------ last --------------------- */
+.simplebar-scrollbar::before {
+  background-color: red;
+}
+.swal2-popup {
+  font-size: 10px !important;
+  font-weight: normal;
+}
+
+/* ------------------ #modals jq_modal --------------------- */
+
+.jq_modal {
+  padding: 7px !important;
+  height: max-content !important;
+  overflow: visible !important;
+  position: relative !important;
+
+}
+.jq_modal > * {
+  margin-top: 20px;
+  outline: none !important;
+  border: none !important;
+}
+.jq_modal *:first-child {
+  margin-top: 0;
+}
+.jq_modal h4 {
+  font-size: 18px;
+  direction: rtl;
+  text-align: center;
+  background-color: #92d100;
+  width: max-content;
+  max-width: 90%;
+  color: black;
+  text-align: center;
+  padding: 6px;
+  margin: 6px auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.jq_modal input {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  box-sizing: border-box;
+  /* outline: none; */
+  text-align: center;
+  direction: rtl;
+  background-color: black;
+  color: var(--MAIN-MASTARD);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.jq_modal input[type="file"] {
+  direction: ltr;
+}
+
+.jq_modal input::placeholder {
+  color: gray;
+}
+.jq_modal input:focus::placeholder {
+  color: transparent;
+}
+.jq_modal select {
+  display: block;
+  width: max-content;
+  max-width: 90%;
+  padding: 5px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  margin: 6px auto;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.jq_modal select option {
+  font-size: 16px;
+}
+.jq_modal select option:first {
+  color: gray;
+}
+.jq_modal button {
+  display: block;
+  width: calc(100% - 50px);
+  padding: 6px;
+  background-color: var(--MAIN-MASTARD);
+  color: black;
+  cursor: pointer;
+  margin: 0 auto;
+  font-size: 18px;
+  border: none;
+  /* outline: none; */
+  font-weight: bold;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.jq_modal button:hover {
+  box-shadow: 0 0 5px black;
+}
